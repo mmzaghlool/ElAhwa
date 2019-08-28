@@ -2,10 +2,21 @@ import React from 'react';
 import { createStackNavigator, createAppContainer, createDrawerNavigator } from "react-navigation";
 
 import Home from "../screens/Home";
+import Login from "../screens/Login";
+import Regestration from "../screens/Regestration";
+import ResetPassword from "../screens/ResetPassword";
 import SideMenu from "../components/SideMenu";
 import Menu from '../screens/Menu';
 
 const AppNavigator = createStackNavigator({
+    Login: {
+        screen: Login
+    },
+    Regestration: {
+        screen: Regestration
+    },
+    ResetPassword: {
+        screen: ResetPassword
 
     Drawer: {
         screen: createDrawerNavigator({
@@ -23,7 +34,8 @@ const AppNavigator = createStackNavigator({
     Menu: {
         screen: Menu
     }
-}, {
+},
+    {
         headerMode: 'none'
     });
 
