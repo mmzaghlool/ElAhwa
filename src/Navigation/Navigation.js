@@ -4,6 +4,9 @@ import { createStackNavigator, createAppContainer, createDrawerNavigator } from 
 import Home from "../screens/Home";
 import SideMenu from "../components/SideMenu";
 import Menu from '../screens/Menu';
+import ChooseSubMenu from '../screens/ChooseSubMenu';
+import Cart from '../screens/Cart';
+import Details from '../screens/Details';
 
 const AppNavigator = createStackNavigator({
 
@@ -22,7 +25,16 @@ const AppNavigator = createStackNavigator({
     },
     Menu: {
         screen: Menu
-    }
+    },
+    ChooseSubMenu: {
+        screen: ChooseSubMenu
+    },
+    Cart: {
+        screen: Cart
+    },
+    Details: {
+        screen: Details
+    },
 }, {
         headerMode: 'none'
     });

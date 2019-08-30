@@ -5,7 +5,8 @@ import { Card } from '../components';
 import { Snackbar, Toolbar } from 'react-native-material-ui';
 import { FlatList } from 'react-native-gesture-handler';
 
-const Home = props => {
+
+export default ChooseSubMenu = props => {
     const [state, setState] = useState({
         isVisible: true
     })
@@ -34,7 +35,6 @@ const Home = props => {
                 onLeftElementPress={() => props.navigation.toggleDrawer()}
                 centerElement="Select your coffee house"
 
-                // centerElement="Searchable"
                 // searchable={{
                 //     autoFocus: true,
                 //     placeholder: 'Search',
@@ -51,7 +51,7 @@ const Home = props => {
             <FlatList
                 data={Object.values(cardsData)}
                 renderItem={({ item }) => <Card text={item.name} image={item.image} 
-                    onPress={() => props.navigation.navigate('Menu', { item })} />}
+                    onPress={() => props.navigation.navigate('Menu', { selected: item })} />}
                 keyExtractor={(item, index) => `${index}`}
             />
 
@@ -59,5 +59,3 @@ const Home = props => {
         </Fragment>
     );
 };
-
-export default Home;
