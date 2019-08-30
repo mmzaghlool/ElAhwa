@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { Drawer, Avatar } from 'react-native-material-ui';
 import { MAIN_COLOR } from '../common/Constants';
 
-export default Home = () => {
+export default Home = (props) => {
     return (
         <Fragment>
             <Drawer >
@@ -28,16 +28,16 @@ export default Home = () => {
                 <Drawer.Section
                     divider
                     items={[
-                        { icon: 'bookmark-border', value: 'Notifications' },
-                        { icon: 'today', value: 'Calendar', active: true },
-                        { icon: 'people', value: 'Clients' },
+                        { icon: 'home', value: 'Home', onPress: () => props.navigation.navigate('Home') },
+                        { icon: 'today', value: 'Promo Code', onPress: () => props.navigation.navigate('PromoCodes') },
+                        { icon: 'people', value: 'Progress', onPress: () => props.navigation.navigate('Progress') },
                     ]}
                 />
                 <Drawer.Section
                     title="Personal"
                     items={[
                         { icon: 'info', value: 'Info', },
-                        { icon: 'settings', value: 'Settings' },
+                        { icon: 'settings', value: 'Settings', onPress: () => props.navigation.navigate('Settings') },
                     ]}
                 />
             </Drawer>

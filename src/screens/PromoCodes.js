@@ -8,20 +8,21 @@ import {
     ImageBackground,
     Image,
     TextInput,
+    FlatList,
 } from "react-native";
-import { Input, ButtonGroup } from "react-native-elements"
-import { Snackbar, Toolbar, COLOR } from 'react-native-material-ui';
+import { Input } from "react-native-elements"
 import { MAIN_COLOR } from "../common/Constants"
+import { Snackbar, Toolbar, COLOR } from 'react-native-material-ui';
 
 const { width, height } = Dimensions.get('window')
 
-export default  ResetPassword = (props) => {
+export default PromoCodes = (props) => {
     return(
         <Fragment>
             <Toolbar
-                leftElement="arrow-back"
-                onLeftElementPress={() => props.navigation.pop()}
-                centerElement={'Reset Password'}
+                leftElement="menu"
+                onLeftElementPress={() => props.navigation.toggleDrawer()}
+                centerElement={'Promo Codes'}
             />
             <ScrollView>
                 <View style={{
@@ -30,15 +31,26 @@ export default  ResetPassword = (props) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <View style={{ width: '80%'}}>
-                        <Text>{`We will send an email to you.\nCheck your inbox and follow the instructions`}</Text>
-                    </View><View style={{
+                    <View style={{ width: '80%', alignItems: 'center'}}>
+                        <Text style={{ color: MAIN_COLOR }}>{`Enjoy with our discounts ;)\n\n`}</Text>
+                    </View>
+                    <View style={{ height: 100, width: '80%' }}>
+                        <Text style={{ color: MAIN_COLOR }}>{`Your codes :\n`}</Text>
+                            <FlatList
+                                style={{ width: '80%' }}
+                                data={[ 'mosaab20', 'pick10', 'weekend15' ]}
+                                renderItem={({item}) => (
+                                    <Text style={{ marginLeft: 10 }}>{item}</Text>
+                                )}
+                        />
+                    </View>
+                    <View style={{
                             width: '80%',
                             borderBottomWidth: 1,
                         }}>
                             <TextInput
-                                placeholder={'Email'}
-                                keyboardType={'email-address'}
+                                placeholder={'Promo code'}
+                                autoCapitalize={'none'}
                             />
                         </View>
                         <TouchableOpacity style={{
@@ -54,7 +66,7 @@ export default  ResetPassword = (props) => {
                             <Text style={{
                                 color: 'white',
                                 fontSize: 20,
-                            }}>Send</Text>
+                            }}>Add code</Text>
                         </TouchableOpacity>
                 </View>
             </ScrollView>
