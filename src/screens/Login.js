@@ -7,12 +7,14 @@ import {
     TouchableOpacity,
     ImageBackground,
     Image,
+    TextInput,
 } from "react-native";
 import { Input } from "react-native-elements"
+import { MAIN_COLOR } from "../common/Constants"
 
 const { width, height } = Dimensions.get('window')
 
-export default function Login() {
+export default Login = (props) => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [password, setPassword] = useState('');
     return (
@@ -23,75 +25,65 @@ export default function Login() {
                     height: height,
                     alignItems: 'center',
                 }}>
-                    <Image style={{
-                        width: '100%',
-                        height: '35%',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                    }}
-                        source={require('./images/coffe.png')}
-                    >
-                        {/* <Text style={{
-                            fontSize: 30,
-                        }}>Welcome to ElAhwa</Text> */}
-                    </Image>
+                    <View style={{height: '10%'}} />
+                    <Image style={{ width: '80%', height: '30%' }} source={require('./images/coffe.png')} />
+                    <View style={{height: '15%'}} />
                     <View style={{
-                        width: '100%',
-                        height: '65%',
-                        // justifyContent:'center',
-                        alignItems: 'center',
-                        borderTopRightRadius: 40,
-                        borderTopLeftRadius: 40,
-                        backgroundColor: '#5E4423',
+                        width: '80%',
+                        borderBottomWidth: 1,
                     }}>
+                        <TextInput
+                            placeholder={'Phone number'}
+                            keyboardType={'numeric'}
+                        />
+                    </View>
+                    <View style={{
+                        width: '80%',
+                        borderBottomWidth: 1,
+                    }}>
+                        <TextInput 
+                            placeholder={'Password'}
+                            secureTextEntry={true}    
+                        />
+                    </View>
+                    <TouchableOpacity style={{
+                        width: '80%',
+                        flexDirection: 'row-reverse',
+                    }}
+                        onPress={() => props.navigation.navigate('ResetPassword')}
+                    >
+                        <Text style={{
+                            color: MAIN_COLOR,
+                            fontSize: 15,
+                            marginTop: 20,
+                        }}>Forget password ?!</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={{
+                        width: '80%',
+                        height: 40,
+                        elevation: 5,
+                        backgroundColor: MAIN_COLOR,
+                        marginTop: 30,
+                        alignItems:'center',
+                        justifyContent: 'center',
+                        borderRadius: 5,
+                    }}
+                        onPress={() => props.navigation.navigate('Home')}
+                    >
                         <Text style={{
                             color: 'white',
-                            fontSize: 35,
-                            marginTop: 20,
+                            fontSize: 20,
                         }}>Login</Text>
-                        <Input
-                            inputStyle={{color:'white'}}
-                            keyboardType={'number-pad'}
-                            placeholder={'Phone number'}
-                            placeholderTextColor={'white'}
-                            onChangeText={(value) => setPhoneNumber(value)}
-                        />
-                        <Input
-                            inputStyle={{color:'white'}}
-                            placeholder={'Password'}
-                            placeholderTextColor={'white'}
-                            onChangeText={(value) => setPassword(value)}
-                            secureTextEntry={true}
-                        />
-                        <TouchableOpacity style={{
-                            width: '95%',
-                            alignItems: 'flex-end',
-                            marginTop: 10,
-                        }}
-                        onPress={() => this.props.navigation.navigate('ResetPassword')}
-                        >
-                            <Text style={{ color: 'white', fontSize: 17 }}>Forget password ?!</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{
-                            height: 40,
-                            width: '25%',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: 'white',
-                            borderRadius: 10,
-                            marginVertical: 20,
-                        }}>
-                            <Text>Login</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{
-                            width: '95%',
-                            alignItems: 'center',
-                            marginTop: 10,
-                        }}>
-                            <Text style={{ color: 'white', fontSize: 17 }}>Don't have an account ?!</Text>
-                        </TouchableOpacity>
-                        <Text style={{color:'white', fontSize:20}}>{`\n\nEl Ahwa`}</Text>
-                    </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        onPress={() => props.navigation.navigate('Regestration')}
+                    >
+                        <Text style={{
+                            color: MAIN_COLOR,
+                            fontSize: 15,
+                            marginTop: 20,
+                        }}>Don't have an account ?!</Text>
+                    </TouchableOpacity>
                 </View>
             </ScrollView>
         </Fragment>
