@@ -43,7 +43,7 @@ export default Item = props => {
                     fontSize: 16,
                     color: 'grey'
                 }} >
-                    {item.discription}
+                    {item.description}
                 </Text>
             </View>
         </TouchableOpacity>

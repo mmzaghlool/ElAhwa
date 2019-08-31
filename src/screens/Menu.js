@@ -23,13 +23,15 @@ export default Menu = props => {
             name: "Pick 'n go",
             image: require('../images/Coffee.png'),
             key: 'x2',
-            discription: ` { backgroundColor: 'white', width: 65, height: 65, borderRadius: 38 } { backgroundColor: 'white', width: 65, height: 65, borderRadius: 38 } import { FlatList, TouchableOpacity } from 'react -native -gesture -han dler`
+            price: 20,
+            description: ` { backgroundColor: 'white', width: 65, height: 65, borderRadius: 38 } { backgroundColor: 'white', width: 65, height: 65, borderRadius: 38 } import { FlatList, TouchableOpacity } from 'react -native -gesture -han dler`
         },
         x221321: {
             name: "Mos3ab",
             image: require('../images/Coffee.png'),
             key: 'x221321',
-            discription: `{ backgroundColor: 'white', width: 65, height: 65, borderRadius: 38 } import { FlatList, TouchableOpacity } from 'react -nativ e-gesture-han dler`
+            price: 30,
+            description: `{ backgroundColor: 'white', width: 65, height: 65, borderRadius: 38 } import { FlatList, TouchableOpacity } from 'react -nativ e-gesture-han dler`
         },
     })
 
@@ -49,7 +51,7 @@ export default Menu = props => {
                 <FlatList
                     data={Object.values(cardsData)}
                     renderItem={({ item }) => <Item item={item}
-                        onPress={() => props.navigation.navigate('Details')} />}
+                        onPress={() => props.navigation.navigate('Details', {item})} />}
                     keyExtractor={(item, index) => `${index}`}
                 />
                 <View style={{
