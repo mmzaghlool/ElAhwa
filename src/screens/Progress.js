@@ -44,8 +44,24 @@ export default Progerss = (props) => {
                         flexDirection: 'row',
                         justifyContent: 'space-between',
                     }}>
-                        <Text>Golden</Text>
-                        <Text>Platinum</Text>
+                        <View style={{alignItems: 'center'}}>
+                            <Image style={{
+                                width: 40,
+                                height: 40,
+                            }}
+                                source={require('./images/golden.png')}
+                            />
+                            <Text>Golden</Text>
+                        </View>
+                        <View style={{alignItems: 'center'}}>
+                            <Image style={{
+                                width: 40,
+                                height: 40,
+                            }}
+                                source={require('./images/platinum.png')}
+                            />
+                            <Text>Platinum</Text>
+                        </View>
                     </View>
                     <ProgressBarAndroid
                         style={{ width: '80%', color: MAIN_COLOR, marginBottom: 10 }}
@@ -54,6 +70,7 @@ export default Progerss = (props) => {
                         progress={0.7}
                     />
                     <Text>only 20 L.E. remain to be a Platinum user</Text>
+                    <Text style={{ marginTop: 10 }}>You saved <Text style={{ color: MAIN_COLOR }}>25 L.E.</Text> this month</Text>
                 </View>
                 <View style={{
                     width: '80%',

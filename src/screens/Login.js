@@ -25,8 +25,8 @@ export default Login = (props) => {
                     height: height,
                     alignItems: 'center',
                 }}>
-                    <View style={{height: '10%'}} />
-                    <Image style={{ width: '80%', height: '30%' }} source={require('./images/coffe.png')} />
+                    <View style={{height: '15%'}} />
+                    <Image style={{ width: '80%', height: '25%' }} source={require('./images/coffe.png')} />
                     <View style={{height: '15%'}} />
                     <View style={{
                         width: '80%',

@@ -31,11 +31,12 @@ export default PromoCodes = (props) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}>
-                    <View style={{ width: '80%', alignItems: 'center'}}>
-                        <Text style={{ color: MAIN_COLOR }}>{`Enjoy with our discounts ;)\n\n`}</Text>
+                    <View style={{ width: '90%', alignItems: 'center'}}>
+                        <Image style={{ width: '100%', height: 120}} source={require('./images/promo.png')} />
+                        <Text style={{ color: MAIN_COLOR }}>{`\nEnjoy with our discounts ;)\n\n`}</Text>
                     </View>
                     <View style={{ height: 100, width: '80%' }}>
-                        <Text style={{ color: MAIN_COLOR }}>{`Your codes :\n`}</Text>
+                        <Text style={{ color: MAIN_COLOR }}>{`Your current codes :\n`}</Text>
                             <FlatList
                                 style={{ width: '80%' }}
                                 data={[ 'mosaab20', 'pick10', 'weekend15' ]}

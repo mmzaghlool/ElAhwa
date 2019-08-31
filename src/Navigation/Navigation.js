@@ -10,6 +10,8 @@ import Menu from '../screens/Menu';
 import PromoCodes from '../screens/PromoCodes';
 import Progress from "../screens/Progress";
 import Settings from "../screens/Settings";
+import Wallet from "../screens/Wallet";
+import Payment from "../screens/Payment";
 
 const AppNavigator = createStackNavigator({
     Login: {
@@ -35,6 +37,12 @@ const AppNavigator = createStackNavigator({
             },
             Settings: {
                 screen: Settings
+            },
+            Wallet: {
+                screen: Wallet
+            },
+            Payment: {
+                screen: Payment
             },
         }, {
                 contentComponent: ({ navigation }) => <SideMenu navigation={navigation} routes={SideMenu} />,
