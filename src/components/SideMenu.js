@@ -29,8 +29,9 @@ export default Home = (props) => {
                     divider
                     items={[
                         { icon: 'home', value: 'Home', onPress: () => props.navigation.navigate('Home') },
-                        { icon: 'today', value: 'Promo Code', onPress: () => props.navigation.navigate('PromoCodes') },
-                        { icon: 'people', value: 'Progress', onPress: () => props.navigation.navigate('Progress') },
+                        { icon: 'card-giftcard', value: 'Promo Code', onPress: () => props.navigation.navigate('PromoCodes') },
+                        { icon: 'timeline', value: 'Progress', onPress: () => props.navigation.navigate('Progress') },
+                        { icon: 'account-balance-wallet', value: 'Wallet', onPress: () => props.navigation.navigate('Wallet') }
                     ]}
                 />
                 <Drawer.Section
