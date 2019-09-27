@@ -24,9 +24,9 @@ export default Wallet = (props) => {
     return (
         <Fragment>
             <Toolbar
-                leftElement="menu"
-                onLeftElementPress={() => props.navigation.toggleDrawer()}
-                centerElement={'Wallet'}
+                rightElement="menu"
+                onRightElementPress={() => props.navigation.toggleDrawer()}
+                centerElement={'المحفظه'}
             />
             <Overlay
                 isVisible={visiable}
@@ -39,7 +39,7 @@ export default Wallet = (props) => {
                     borderBottomWidth: 1,
                 }}>
                     <TextInput
-                        placeholder={'Amount'}
+                        placeholder={'المبلغ'}
                         keyboardType={'numeric'}
                     />
                 </View>
@@ -61,7 +61,7 @@ export default Wallet = (props) => {
                     <Text style={{
                         color: 'white',
                         fontSize: 20,
-                    }}>Deposit</Text>
+                    }}>إيداع</Text>
                 </TouchableOpacity>
             </Overlay>
             <View style={{
@@ -73,10 +73,10 @@ export default Wallet = (props) => {
                     width: '40%',
                     marginTop: height * 0.1
                 }}>
-                    <Text style={{ fontSize: 20 }}>EGP</Text>
+                    <Text style={{ fontSize: 20 }}>جنيه مصرى</Text>
                     <View style={{ width: '100%', alignItems: 'center' }}>
                         <Text style={{ fontSize: 70 }}>35</Text>
-                        <Text style={{ fontSize: 20 }}>Available credit</Text>
+                        <Text style={{ fontSize: 20 }}>رصيدك الحالى</Text>
                     </View>
                 </View>
                 <TouchableOpacity style={{
@@ -94,7 +94,7 @@ export default Wallet = (props) => {
                     <Text style={{
                         color: 'white',
                         fontSize: 20,
-                    }}>Deposit</Text>
+                    }}>إيداع</Text>
                 </TouchableOpacity>
             </View>
         </Fragment>

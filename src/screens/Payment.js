@@ -25,9 +25,9 @@ export default Payment = (props) => {
     return (
         <Fragment>
             <Toolbar
-                leftElement="menu"
-                onLeftElementPress={() => props.navigation.toggleDrawer()}
-                centerElement={'Payment'}
+                rightElement="arrow-forward"
+                onRightElementPress={() => props.navigation.pop()}
+                centerElement={'الدفع'}
             />
             <Overlay
                 isVisible={payMethod}
@@ -38,7 +38,7 @@ export default Payment = (props) => {
                     fontSize: 20,
                     color: MAIN_COLOR,
                     marginBottom: 10,
-                }}>Select payment method</Text>
+                }}>إختر وسيلة الدفع</Text>
                 <TouchableOpacity style={{
                     width: '80%',
                     height: 60,
@@ -51,7 +51,7 @@ export default Payment = (props) => {
                 >
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Image style={{ width: 50, height: 50, marginRight: 5 }} source={require('./images/visa.png')} />
-                        <Text>Credit card</Text>
+                        <Text>بطاقة إئتمان</Text>
                     </View>
                     <MaterialIcons name={'navigate-next'} size={20} />
                 </TouchableOpacity>
@@ -67,7 +67,7 @@ export default Payment = (props) => {
                 >
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Image style={{ width: 50, height: 50, marginRight: 5 }} source={require('./images/aman.png')} />
-                        <Text>Aman</Text>
+                        <Text>امان</Text>
                     </View>
                     <MaterialIcons name={'navigate-next'} size={20} />
                 </TouchableOpacity>
@@ -83,7 +83,7 @@ export default Payment = (props) => {
                 >
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Image style={{ width: 50, height: 50, marginRight: 5 }} source={require('./images/fawry.png')} />
-                        <Text>Fawry</Text>
+                        <Text>فورى</Text>
                     </View>
                     <MaterialIcons name={'navigate-next'} size={20} />
                 </TouchableOpacity>
@@ -104,11 +104,11 @@ export default Payment = (props) => {
                 }}
                     onPress={() => setPayMethod(true)}
                 >
-                    <Text>Payment method :</Text>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Image style={{ width: 50, height: 50, marginRight: 5 }} source={require('./images/visa.png')} />
-                        <Text>Credit card</Text>
+                        <Text>بطاقة إئتمان</Text>
                     </View>
+                    <Text>وسيلة الدفع :</Text>
                 </TouchableOpacity>
             </View>
         </Fragment>

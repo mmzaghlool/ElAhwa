@@ -21,9 +21,9 @@ export default Setting = (props) => {
     return(
         <Fragment>
             <Toolbar
-                leftElement="menu"
-                onLeftElementPress={() => props.navigation.toggleDrawer()}
-                centerElement={'Settings'}
+                rightElement="menu"
+                onRightElementPress={() => props.navigation.toggleDrawer()}
+                centerElement={'الإعدادات'}
             />
         </Fragment>
     );

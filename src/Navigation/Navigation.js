@@ -15,6 +15,7 @@ import Cart from '../screens/Cart';
 import Details from '../screens/Details';
 import Wallet from "../screens/Wallet";
 import Payment from "../screens/Payment";
+import Profile from "../screens/Profile";
 
 const AppNavigator = createStackNavigator({
     Login: {
@@ -42,15 +43,25 @@ const AppNavigator = createStackNavigator({
                 screen: Settings
             },
             Wallet: {
-                screen: Wallet
+                screen: createStackNavigator({
+                    Wallet: {
+                        screen: Wallet
+                    },
+                    Payment: {
+                        screen: Payment
+                    },
+                },
+                {
+                    headerMode: 'none'
+                })
             },
-            Payment: {
-                screen: Payment
+            Profile: {
+                screen: Profile
             },
         }, {
                 contentComponent: ({ navigation }) => <SideMenu navigation={navigation} routes={SideMenu} />,
                 headerMode: 'none',
-                drawerPosition: 'left',
+                drawerPosition: 'right',
                 overlayColor: 'transparent',
             })
     },

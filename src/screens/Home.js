@@ -31,9 +31,9 @@ export default ChooseSubMenu = props => {
     return (
         <Fragment>
             <Toolbar
-                leftElement="menu"
-                onLeftElementPress={() => props.navigation.toggleDrawer()}
-                centerElement="Select your coffee house"
+                rightElement="menu"
+                onRightElementPress={() => props.navigation.toggleDrawer()}
+                centerElement="الرئيسيه"
 
                 // searchable={{
                 //     autoFocus: true,

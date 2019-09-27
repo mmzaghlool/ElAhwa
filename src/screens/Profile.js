@@ -8,21 +8,28 @@ import {
     ImageBackground,
     Image,
     TextInput,
+    FlatList,
+    ProgressBarAndroid,
 } from "react-native";
-import { Input, ButtonGroup } from "react-native-elements";
-import { Snackbar, Toolbar, COLOR } from 'react-native-material-ui';
+import { Input, Overlay } from "react-native-elements"
 import { MAIN_COLOR } from "../common/Constants"
-// import { Button } from "../components/Button";
+import { Snackbar, Toolbar, COLOR } from 'react-native-material-ui';
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 const { width, height } = Dimensions.get('window')
 
-export default Regestration = (props) => {
+export default Profile = (props) => {
+    const [user, setUser] = useState({
+        name: '',
+        email: '',
+        phone: '',
+    })
     return(
         <Fragment>
             <Toolbar
-                rightElement="arrow-forward"
-                onRightElementPress={() => props.navigation.pop()}
-                centerElement={'تسجيل حساب'}
+                rightElement="menu"
+                onRightElementPress={() => props.navigation.toggleDrawer()}
+                centerElement={'الملف الشخصى'}
             />
             <ScrollView>
                 <View style={{
@@ -31,6 +38,24 @@ export default Regestration = (props) => {
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}>
+                    {/* Image */}
+                    <TouchableOpacity onPress={() => {}}>
+                        <Image style={{ width: 140, height: 140}} source={require('./images/user.png')} />
+                        <View style={{
+                            position: 'absolute',
+                            bottom: 0,
+                            right: 0,
+                            borderWidth: 1,
+                            width: 40,
+                            height: 40,
+                            borderRadius: 20,
+                            backgroundColor: 'white',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}>
+                            <MaterialIcons name={'camera-alt'} size={20} />
+                        </View>
+                    </TouchableOpacity>
                     {/* Name */}
                     <View style={{
                         width: '80%',
@@ -39,6 +64,8 @@ export default Regestration = (props) => {
                         <TextInput
                             placeholder={'الاسم'}
                             autoCapitalize={'words'}
+                            value={user.name}
+                            onChangeText={(name) => setUser({...user, name})}
                         />
                     </View>
                     {/* Phone number */}
@@ -49,6 +76,8 @@ export default Regestration = (props) => {
                         <TextInput
                             placeholder={'رقم الهاتف'}
                             keyboardType={'numeric'}
+                            value={user.phone}
+                            onChangeText={(phone) => setUser({...user, phone})}
                         />
                     </View>
                     {/* Email */}
@@ -59,36 +88,18 @@ export default Regestration = (props) => {
                         <TextInput
                             placeholder={'البريد الاليكترونى'}
                             keyboardType={'email-address'}
+                            value={user.email}
+                            onChangeText={(email) => setUser({...user, email})}
                         />
                     </View>
-                    {/* Password */}
-                    <View style={{
-                        width: '80%',
-                        borderBottomWidth: 1,
-                    }}>
-                        <TextInput
-                            placeholder={'كلمة السر'}
-                            secureTextEntry={true}
-                        />
-                    </View>
-                    {/* Address */}
-                    <View style={{
-                        width: '80%',
-                        borderBottomWidth: 1,
-                    }}>
-                        <TextInput
-                            placeholder={'العنوان'}
-                            autoCapitalize={'sentences'}
-                        />
-                    </View>
-                    <Button text={'تسجيل الحساب'} onPress={() => {}} />
+                    <Button text={'حفظ التغيرات'} onPress={() => {}} />
                 </View>
             </ScrollView>
         </Fragment>
     );
-}
+ }
 
-const Button = props => {
+ const Button = props => {
     return(
         <TouchableOpacity style={{
             width: '80%',
