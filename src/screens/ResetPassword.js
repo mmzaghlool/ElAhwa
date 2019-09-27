@@ -19,9 +19,9 @@ export default  ResetPassword = (props) => {
     return(
         <Fragment>
             <Toolbar
-                leftElement="arrow-back"
-                onLeftElementPress={() => props.navigation.pop()}
-                centerElement={'Reset Password'}
+                rightElement="arrow-forward"
+                onRightElementPress={() => props.navigation.pop()}
+                centerElement={'إعادة تعيين كلمة السر'}
             />
             <ScrollView>
                 <View style={{
@@ -31,33 +31,41 @@ export default  ResetPassword = (props) => {
                     alignItems: 'center',
                 }}>
                     <View style={{ width: '80%'}}>
-                        <Text>{`We will send an email to you.\nCheck your inbox and follow the instructions`}</Text>
+                        <Text>{`سوف نرسل لك رابط إعادة تعيين كلمة المرور\nتابع بريدك الاليكترونى و اتبع التعليمات`}</Text>
                     </View><View style={{
                             width: '80%',
                             borderBottomWidth: 1,
                         }}>
                             <TextInput
-                                placeholder={'Email'}
+                                placeholder={'البريد الاليكترونى'}
                                 keyboardType={'email-address'}
                             />
                         </View>
-                        <TouchableOpacity style={{
-                            width: '80%',
-                            height: 40,
-                            elevation: 5,
-                            backgroundColor: MAIN_COLOR,
-                            marginTop: 30,
-                            alignItems:'center',
-                            justifyContent: 'center',
-                            borderRadius: 5,
-                        }}>
-                            <Text style={{
-                                color: 'white',
-                                fontSize: 20,
-                            }}>Send</Text>
-                        </TouchableOpacity>
+                        <Button text={'أرسل'} onPress={() => {}} />
                 </View>
             </ScrollView>
         </Fragment>
+    );
+}
+
+const Button = props => {
+    return(
+        <TouchableOpacity style={{
+            width: '80%',
+            height: 40,
+            elevation: 5,
+            backgroundColor: MAIN_COLOR,
+            marginTop: 30,
+            alignItems:'center',
+            justifyContent: 'center',
+            borderRadius: 5,
+        }}
+            onPress={props.onPress}
+        >
+            <Text style={{
+                color: 'white',
+                fontSize: 20,
+            }}>{props.text}</Text>
+        </TouchableOpacity>
     );
 }

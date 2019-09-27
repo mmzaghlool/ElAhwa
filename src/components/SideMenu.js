@@ -28,17 +28,17 @@ export default Home = (props) => {
                 <Drawer.Section
                     divider
                     items={[
-                        { icon: 'home', value: 'Home', onPress: () => props.navigation.navigate('Home') },
-                        { icon: 'card-giftcard', value: 'Promo Code', onPress: () => props.navigation.navigate('PromoCodes') },
-                        { icon: 'timeline', value: 'Progress', onPress: () => props.navigation.navigate('Progress') },
-                        { icon: 'account-balance-wallet', value: 'Wallet', onPress: () => props.navigation.navigate('Wallet') }
+                        { icon: 'home', value: 'الرئيسيه', onPress: () => props.navigation.navigate('Home') },
+                        { icon: 'card-giftcard', value: 'أكواد الخصومات', onPress: () => props.navigation.navigate('PromoCodes') },
+                        { icon: 'timeline', value: 'المستوى', onPress: () => props.navigation.navigate('Progress') },
+                        { icon: 'account-balance-wallet', value: 'المحفظه', onPress: () => props.navigation.navigate('Wallet') }
                     ]}
                 />
                 <Drawer.Section
                     title="Personal"
                     items={[
-                        { icon: 'info', value: 'Info', },
-                        { icon: 'settings', value: 'Settings', onPress: () => props.navigation.navigate('Settings') },
+                        { icon: 'info', value: 'الملف الشخصى', onPress: () => props.navigation.navigate('Profile') },
+                        { icon: 'settings', value: 'الإعدادات', onPress: () => props.navigation.navigate('Settings') },
                     ]}
                 />
             </Drawer>

@@ -57,7 +57,7 @@ export default Menu = props => {
                 <View style={{
                     height: 60
                 }}>
-                    <Button Text="Finish Order" onPress={() => props.navigation.navigate('Cart')} />
+                    <Button Text="إنهاء الطلب" onPress={() => props.navigation.navigate('Cart')} />
                 </View>
             </View>
         }
@@ -66,14 +66,14 @@ export default Menu = props => {
     return (
         <Fragment>
             <Toolbar
-                leftElement="arrow-back"
-                onLeftElementPress={() => props.navigation.pop()}
+                rightElement="arrow-forward"
+                onRightElementPress={() => props.navigation.pop()}
                 centerElement={selected.name}
 
-                searchable={{
-                    autoFocus: true,
-                    placeholder: 'Search',
-                }}
+                // searchable={{
+                //     autoFocus: true,
+                //     placeholder: 'Search',
+                // }}
             />
 
             <ChooseSubMenu selected={state.subMenu}

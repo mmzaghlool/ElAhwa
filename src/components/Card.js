@@ -10,7 +10,7 @@ export default Card = props => {
             onBlur={() => setBackgroundColorState(COLOR.grey200)}
             onPress={props.onPress}
             style={{
-                flexDirection: 'row',
+                flexDirection: 'row-reverse',
                 width: '95%',
                 margin: 7,
                 padding: 7,

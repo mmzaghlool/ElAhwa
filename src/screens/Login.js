@@ -33,7 +33,7 @@ export default Login = (props) => {
                         borderBottomWidth: 1,
                     }}>
                         <TextInput
-                            placeholder={'Phone number'}
+                            placeholder={'رقم الهاتف'}
                             keyboardType={'numeric'}
                         />
                     </View>
@@ -42,7 +42,7 @@ export default Login = (props) => {
                         borderBottomWidth: 1,
                     }}>
                         <TextInput 
-                            placeholder={'Password'}
+                            placeholder={'كلمة السر'}
                             secureTextEntry={true}    
                         />
                     </View>
@@ -56,25 +56,9 @@ export default Login = (props) => {
                             color: MAIN_COLOR,
                             fontSize: 15,
                             marginTop: 20,
-                        }}>Forget password ?!</Text>
+                        }}>نسيت كلمة السر ؟</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={{
-                        width: '80%',
-                        height: 40,
-                        elevation: 5,
-                        backgroundColor: MAIN_COLOR,
-                        marginTop: 30,
-                        alignItems:'center',
-                        justifyContent: 'center',
-                        borderRadius: 5,
-                    }}
-                        onPress={() => props.navigation.navigate('Home')}
-                    >
-                        <Text style={{
-                            color: 'white',
-                            fontSize: 20,
-                        }}>Login</Text>
-                    </TouchableOpacity>
+                    <Button text={'تسجيل الدخول'} onPress={() => props.navigation.navigate('Home')} />
                     <TouchableOpacity 
                         onPress={() => props.navigation.navigate('Regestration')}
                     >
@@ -82,10 +66,32 @@ export default Login = (props) => {
                             color: MAIN_COLOR,
                             fontSize: 15,
                             marginTop: 20,
-                        }}>Don't have an account ?!</Text>
+                        }}>ليس لديك حساب ؟</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>
         </Fragment>
+    );
+}
+
+const Button = props => {
+    return(
+        <TouchableOpacity style={{
+            width: '80%',
+            height: 40,
+            elevation: 5,
+            backgroundColor: MAIN_COLOR,
+            marginTop: 30,
+            alignItems:'center',
+            justifyContent: 'center',
+            borderRadius: 5,
+        }}
+            onPress={props.onPress}
+        >
+            <Text style={{
+                color: 'white',
+                fontSize: 20,
+            }}>{props.text}</Text>
+        </TouchableOpacity>
     );
 }

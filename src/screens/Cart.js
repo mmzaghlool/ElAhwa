@@ -190,21 +190,21 @@ export default class Cart extends Component {
 
           {/* Total amount */}
           <View style={{ padding: 7, width: '100%', backgroundColor: COLOR.grey100 }} >
-            <View style={{ margin: 7, width: '100%', flexDirection: "row" }} >
+            <View style={{ margin: 7, width: '100%', flexDirection: "row-reverse" }} >
               <Text
                 style={{
                   fontSize: 14,
                   color: 'black', marginEnd: 3
                 }}
               >
-                Total:
+                الإجمالى:
             </Text>
               <Text style={{ fontSize: 14, color: MAIN_COLOR }} >
-                123 EGP
+                123 جنيه
             </Text>
             </View>
             {/* Finish order */}
-            <CartButton buttonColor={MAIN_COLOR} textColor='white' text='Finish order' onPress={() => {
+            <CartButton buttonColor={MAIN_COLOR} textColor='white' text='تأكيد الطلب' onPress={() => {
               this.setState({ cartData: [] });
             }} />
           </View>
@@ -221,7 +221,7 @@ export default class Cart extends Component {
               color: MAIN_COLOR
             }}
           >
-            There are no product added
+            لم تقم بإضافة اى منتجات
           </Text>
         </View>
       );
@@ -233,9 +233,9 @@ export default class Cart extends Component {
     return (
       <>
         <Toolbar
-          leftElement="arrow-back"
-          onLeftElementPress={() => this.props.navigation.pop()}
-          centerElement='Cart'
+          rightElement="arrow-forward"
+          onRightElementPress={() => this.props.navigation.pop()}
+          centerElement='عربة المشتريات'
         />
 
         {this._renderOrdesView()}
